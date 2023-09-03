@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= name + "'s Profile"
+    link(rel="stylesheet", href="/stylesheets.css")
+  body
+    h1= name
+    if name === "Sam Smith"
+      img(src="https://i.iheart.com/v3/re/new_assets/63aa0c782b71c3d96f251863?ops=contain(1480,0)", alt="picture of Sam Smith")
+    else 
+      img(src="https://i.scdn.co/image/ab677762000056b8f428c04669c18ff10960eed3", alt="picture of Jacob Collier")
+  ul
+    li= interest1
+    li= interest2
+    li= interest3
+    if interest4
+        li= interest4
+    if interest5
+        li= interest5
+    - for (var x = 0; x < 3; x++)
+      li another thing
+    // ... Continue as necessary
+
+
+    form(action="/add-interest/" + name.toLowerCase().split(' ').join(''), method="post")
+      label Add New Interest
+      input(type="text", name="newInterest")
+      button(type="submit") Submit
+
